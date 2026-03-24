@@ -7,13 +7,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="flex flex-col gap-4">
-            <Link href="/" className="flex flex-col">
-              <span className="font-serif-italic text-4xl font-regular tracking-wide leading-none">
-                AUS
-              </span>
-              <span className="text-sm uppercase tracking-widest font-bold font-satoshi mt-1">
-                Magazine
-              </span>
+            <Link href="/" className="flex items-center">
+              <img src="/LOGO.png" alt="AUS Magazine" className="h-10 w-auto object-contain" />
             </Link>
             <p className="text-white/60 text-sm mt-4 leading-relaxed">
               Australia's Viral Promotion Platform. Helping Aussie brands, creators and local businesses get seen by thousands of engaged followers every single day.

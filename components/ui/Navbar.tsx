@@ -5,9 +5,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "./Button";
+import { Menu, X } from "lucide-react";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -30,46 +32,80 @@ export function Navbar() {
   ];
 
   return (
-    <nav
-      className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4 flex items-center justify-between",
-        scrolled
-          ? "bg-black/60 backdrop-blur-md border-b border-white/10 py-4"
-          : "bg-transparent py-6"
-      )}
-    >
-      <Link href="/" className="flex items-center gap-2">
-        <span className="font-serif-italic text-3xl font-regular tracking-wide leading-none">
-          AUS
-        </span>
-        <span className="text-sm uppercase tracking-widest font-bold font-satoshi mt-1">
-          Magazine
-        </span>
-      </Link>
-
-      <div className="hidden md:flex items-center gap-8">
-        {navLinks.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={cn(
-              "text-sm uppercase tracking-widest hover:text-gold transition-colors font-bold",
-              pathname === link.href ? "text-gold" : "text-white/80"
-            )}
-            onClick={() => window.scrollTo(0, 0)}
-          >
-            {link.label}
-          </Link>
-        ))}
-      </div>
-
-      <div className="flex items-center gap-4">
-        <Link href="/get-featured">
-          <Button className="h-10 px-6 text-sm">
-            Get Featured
-          </Button>
+    <>
+      <nav
+        className={cn(
+          "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] md:max-w-4xl lg:max-w-3xl rounded-3xl px-6 py-3 flex items-center justify-between border",
+          scrolled
+            ? "bg-[#080808]/95 backdrop-blur-md border-white/10 shadow-2xl"
+            : "bg-[#080808]/80 backdrop-blur-sm border-white/5"
+        )}
+      >
+        <Link href="/" className="flex items-center shrink-0">
+          <img src="/LOGO.png" alt="AUS Magazine" className="h-12 w-auto object-contain rounded-full" />
         </Link>
-      </div>
-    </nav>
+
+        {/* Desktop Links */}
+        <div className="hidden md:flex items-center gap-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "text-sm transition-colors font-medium",
+                pathname === link.href ? "text-white" : "text-white/60 hover:text-white"
+              )}
+              onClick={() => window.scrollTo(0, 0)}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        {/* Desktop Button */}
+        <div className="hidden md:flex items-center shrink-0">
+          <Link href="/get-featured">
+            <Button className="h-10 px-6 text-sm rounded-full bg-[#FF4F3B] hover:bg-[#FF4F3B]/90 text-white capitalize font-medium tracking-normal border-none">
+              Get Featured
+            </Button>
+          </Link>
+        </div>
+
+        {/* Mobile Toggle */}
+        <button 
+          className="md:hidden text-white/80 hover:text-white py-1 flex items-center justify-center shrink-0"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          {mobileMenuOpen ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1.5} />}
+        </button>
+      </nav>
+
+      {/* Mobile Menu Dropdown */}
+      {mobileMenuOpen && (
+        <div className="md:hidden fixed top-24 left-4 right-4 z-40 bg-[#080808] border border-white/10 rounded-2xl p-6 flex flex-col shadow-2xl">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={cn(
+                "py-4 text-base border-b border-white/5 last:border-0",
+                pathname === link.href ? "text-white font-bold" : "text-white/70"
+              )}
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.scrollTo(0, 0);
+              }}
+            >
+              {link.label}
+            </Link>
+          ))}
+          <Link href="/get-featured" className="mt-8" onClick={() => setMobileMenuOpen(false)}>
+            <Button className="w-full rounded-full bg-[#FF4F3B] hover:bg-[#FF4F3B]/90 text-white font-medium border-none h-12">
+              Get Featured
+            </Button>
+          </Link>
+        </div>
+      )}
+    </>
   );
 }
