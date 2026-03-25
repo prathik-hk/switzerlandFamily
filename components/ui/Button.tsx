@@ -10,12 +10,12 @@ export interface ButtonProps
 }
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap text-base font-bold transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-14 px-8 uppercase tracking-wider rounded-none",
+  "inline-flex items-center justify-center whitespace-nowrap text-base font-bold transition-colors duration-300 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-14 px-8 uppercase tracking-wider rounded-md",
   {
     variants: {
       variant: {
         default:
-          "bg-gold text-black hover:bg-gold/90",
+          "bg-gold text-black hover:bg-white hover:text-black",
         outline:
           "border border-white bg-transparent text-white hover:bg-white hover:text-black",
       },

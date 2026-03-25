@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { Ticker } from "@/components/ui/Ticker";
 import { PackageCard } from "@/components/ui/PackageCard";
 import { Reveal } from "@/components/ui/Reveal";
@@ -42,10 +43,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full px-4 sm:px-0 mb-4 md:mb-16">
             <Link href="/get-featured" className="w-full sm:w-auto">
-              <Button className="w-full sm:w-auto">Get Featured</Button>
-            </Link>
-            <Link href="/advertise" className="w-full sm:w-auto">
-              <Button variant="outline" className="w-full sm:w-auto">Advertise With Us</Button>
+              <AnimatedButton>Get Featured</AnimatedButton>
             </Link>
           </div>
         </Reveal>
@@ -259,7 +257,7 @@ export default function Home() {
           </p>
           <div className="flex justify-center gap-4 flex-col sm:flex-row">
             <Link href="/get-featured">
-              <Button>Get Featured</Button>
+              <AnimatedButton>Get Featured</AnimatedButton>
             </Link>
             <Link href="/contact">
               <Button variant="outline">Contact Us</Button>
