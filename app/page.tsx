@@ -32,7 +32,7 @@ export default function Home() {
                 ))}
               </div>
               <div className="text-sm font-medium text-slate-600">
-                Trusted by <span className="text-slate-900 font-bold">954K+</span> engaged Swiss followers 
+                Trusted by <span className="text-slate-900 font-bold">954K+</span> engaged Swiss followers
               </div>
             </div>
           </div>
@@ -46,9 +46,9 @@ export default function Home() {
             <Link href="/get-featured" className="w-full sm:w-auto">
               <AnimatedButton>Get Featured</AnimatedButton>
             </Link>
-            
+
           </div>
-          
+
           <div className="flex flex-wrap items-center justify-center gap-2 mt-4 opacity-80">
             {['Food', 'Photography', 'Beauty', 'Tips', 'Marketing', 'Small Business'].map(tag => (
               <span key={tag} className="text-xs uppercase tracking-widest border border-slate-300 text-slate-500 rounded-full px-3 py-1 bg-white font-bold">
@@ -74,28 +74,28 @@ export default function Home() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">
-            <AnimatedStatCard 
-              endValue={954} 
-              suffix="K+" 
-              label="Total Followers" 
+            <AnimatedStatCard
+              endValue={954}
+              suffix="K+"
+              label="Total Followers"
               theme="light"
             />
-            <AnimatedStatCard 
-              endValue={5} 
-              suffix="M+" 
-              label="Total Reach" 
+            <AnimatedStatCard
+              endValue={5}
+              suffix="M+"
+              label="Total Reach"
               theme="dark"
             />
-            <AnimatedStatCard 
-              endValue={500} 
-              suffix="+" 
-              label="Brands Featured" 
+            <AnimatedStatCard
+              endValue={500}
+              suffix="+"
+              label="Brands Featured"
               theme="dark"
             />
-            <AnimatedStatCard 
-              endValue={5080} 
-              suffix="+" 
-              label="Posts Published" 
+            <AnimatedStatCard
+              endValue={5080}
+              suffix="+"
+              label="Posts Published"
               theme="dark"
             />
           </div>
@@ -119,14 +119,14 @@ export default function Home() {
               { num: "02", title: "Exposure", body: "Reach real audiences across Zurich, Geneva, Basel, and Bern. No bots, no inflated numbers — genuine Swiss people who act on what they discover." },
               { num: "03", title: "Results", body: "Drive real traffic, new followers, and paying customers. Our partners see measurable growth within 48 hours of going live." }
             ].map((col, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="flex flex-col items-start p-8 border border-slate-200 bg-[#FAFCFF] rounded-lg min-h-[320px] justify-between md:p-10"
               >
                 <span className="flex items-center md:hidden font-serif-italic text-2xl font-bold text-slate-400 uppercase tracking-widest">
                   {col.num}<span className="ml-2 mt-2.5 h-1.5 w-1.5 bg-primary rounded-full"></span>
                 </span>
-                
+
                 <span className="hidden md:block text-7xl font-bold text-slate-200 mb-6 leading-none">
                   {col.num}
                 </span>
@@ -148,12 +148,12 @@ export default function Home() {
             <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">Viral Content</span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900">The Engagement Engine</h2>
           </div>
-          
+
           <div className="relative w-full flex overflow-hidden">
             <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#FAFCFF] to-transparent z-10 pointer-events-none"></div>
             <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#FAFCFF] to-transparent z-10 pointer-events-none"></div>
-            
-            <motion.div 
+
+            <motion.div
               className="flex space-x-6 w-max items-center px-6"
               animate={{ x: ["0%", "-50%"] }}
               transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
@@ -188,7 +188,7 @@ export default function Home() {
             <p className="text-slate-600 max-w-2xl mb-16 text-lg font-medium">
               Promote your business, product, or service to a highly engaged Swiss audience. Choose your level of exposure.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full text-left">
               <PackageCard
                 name="Story Feature"
@@ -219,7 +219,7 @@ export default function Home() {
                 href="/get-featured"
               />
             </div>
-            
+
             <div className="mt-12 text-slate-500 text-sm font-medium">
               All packages include a personal review. Questions? <Link href="/contact" className="text-primary font-bold hover:underline">Contact us</Link>.
             </div>
@@ -242,7 +242,7 @@ export default function Home() {
                 <span className="w-6 h-px bg-slate-900 group-hover:bg-primary transition-colors"></span>
               </Link>
             </div>
-            
+
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
               {[
                 { title: "Switzerland-Focused Audience", desc: "Our entire community is Swiss-based. Your promotion reaches real local customers, not international followers who will never visit your shop." },
@@ -266,7 +266,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto flex flex-col items-center">
             <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4">Results</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-20 text-center text-slate-900">Real <span className="font-serif-italic font-regular text-primary">Growth</span> for Real Swiss Brands</h2>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
               {[
                 { quote: "We gained 400 plus followers in the first 48 hours. Our DMs were full of enquiries. Best CHF 50 we have ever spent on marketing.", name: "Lena M.", biz: "Nail Studio, Zurich" },
