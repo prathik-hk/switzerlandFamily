@@ -37,12 +37,12 @@ export function Navbar() {
         className={cn(
           "fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-[calc(100%-2rem)] md:max-w-4xl lg:max-w-3xl rounded-3xl px-6 py-3 flex items-center justify-between border",
           scrolled
-            ? "bg-[#080808]/95 backdrop-blur-md border-white/10 shadow-2xl"
-            : "bg-[#080808]/80 backdrop-blur-sm border-white/5"
+            ? "bg-white/95 backdrop-blur-md border-slate-200 shadow-xl"
+            : "bg-white/80 backdrop-blur-sm border-slate-200"
         )}
       >
         <Link href="/" className="flex items-center shrink-0">
-          <img src="/LOGO.png" alt="AUS Magazine" className="h-12 w-auto object-contain rounded-full" />
+          <img src="/logo.png" alt="Switzerland Familye" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Desktop Links */}
@@ -52,12 +52,16 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-sm transition-colors font-medium",
-                pathname === link.href ? "text-white" : "text-white/60 hover:text-white"
+                "relative text-sm transition-colors font-medium group",
+                pathname === link.href ? "text-slate-900 font-bold" : "text-slate-600 hover:text-slate-900"
               )}
               onClick={() => window.scrollTo(0, 0)}
             >
               {link.label}
+              <span className={cn(
+                "absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ease-out",
+                pathname === link.href ? "w-full" : "w-0 group-hover:w-full"
+              )}></span>
             </Link>
           ))}
         </div>
@@ -65,7 +69,7 @@ export function Navbar() {
         {/* Desktop Button */}
         <div className="hidden md:flex items-center shrink-0">
           <Link href="/get-featured">
-            <Button className="h-10 px-6 text-sm rounded-full bg-[#FF4F3B] hover:bg-[#FF4F3B]/90 text-white capitalize font-medium tracking-normal border-none">
+            <Button className="h-10 px-6 text-sm rounded-full bg-primary hover:bg-primary/90 text-white hover:text-white capitalize font-medium tracking-normal border-none shadow-md hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300">
               Get Featured
             </Button>
           </Link>
@@ -73,7 +77,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-white/80 hover:text-white py-1 flex items-center justify-center shrink-0"
+          className="md:hidden text-slate-700 hover:text-slate-900 py-1 flex items-center justify-center shrink-0"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1.5} />}
@@ -82,14 +86,14 @@ export function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-24 left-4 right-4 z-40 bg-[#080808] border border-white/10 rounded-2xl p-6 flex flex-col shadow-2xl">
+        <div className="md:hidden fixed top-24 left-4 right-4 z-40 bg-white border border-slate-200 rounded-2xl p-6 flex flex-col shadow-2xl">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "py-4 text-base border-b border-white/5 last:border-0",
-                pathname === link.href ? "text-white font-bold" : "text-white/70"
+                "py-4 text-base border-b border-slate-100 last:border-0",
+                pathname === link.href ? "text-slate-900 font-bold" : "text-slate-600"
               )}
               onClick={() => {
                 setMobileMenuOpen(false);
@@ -100,7 +104,7 @@ export function Navbar() {
             </Link>
           ))}
           <Link href="/get-featured" className="mt-8" onClick={() => setMobileMenuOpen(false)}>
-            <Button className="w-full rounded-full bg-[#FF4F3B] hover:bg-[#FF4F3B]/90 text-white font-medium border-none h-12">
+            <Button className="w-full rounded-full bg-primary hover:bg-primary/90 text-white font-medium border-none h-12">
               Get Featured
             </Button>
           </Link>

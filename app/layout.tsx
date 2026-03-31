@@ -12,8 +12,8 @@ const dmSerifText = DM_Serif_Text({
 });
 
 export const metadata: Metadata = {
-  title: "AUS Magazine - Australia's Viral Promotion Platform",
-  description: "Helping Aussie brands, creators and local businesses get seen by thousands of engaged followers every single day.",
+  title: "Switzerland Familye - Switzerland's Viral Promotion Platform",
+  description: "Helping Swiss brands, creators, and small businesses get seen by nearly a million real, engaged followers — every single day.",
 };
 
 export default function RootLayout({

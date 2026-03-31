@@ -32,23 +32,23 @@ export function PackageCard({
 }: PackageProps) {
   const content = (
     <div className={cn(
-      "relative flex flex-col p-8 bg-[#111111] transition-all duration-300",
-      isPopular ? "border-gold border-t-2" : "border-white/10 border",
-      isActive && "border-l-4 border-l-gold",
+      "relative flex flex-col p-8 bg-white transition-all duration-300 rounded-lg shadow-sm",
+      isPopular ? "border-primary border-t-4" : "border-slate-200 border",
+      isActive && "border-l-4 border-l-primary",
       className
     )}>
       {isPopular && (
-        <span className="absolute -top-[14px] left-8 bg-gold text-black text-[10px] uppercase font-bold tracking-widest px-3 py-1">
+        <span className="absolute -top-[14px] left-8 bg-primary text-white text-[10px] uppercase font-bold tracking-widest px-3 py-1 rounded-full">
           Most Popular
         </span>
       )}
-      <h3 className="text-2xl font-serif-italic mb-2">{name}</h3>
-      <p className="text-white/60 text-sm mb-6 h-[60px]">{description}</p>
-      <div className="text-4xl font-bold mb-8 font-satoshi">{price}</div>
+      <h3 className="text-2xl font-serif-italic mb-2 text-slate-900">{name}</h3>
+      <p className="text-slate-500 text-sm mb-6 h-[60px]">{description}</p>
+      <div className="text-4xl font-bold mb-8 font-satoshi text-slate-900">{price}</div>
       <ul className="flex flex-col gap-4 mb-10 flex-grow">
         {features.map((feature, i) => (
-          <li key={i} className="flex items-start gap-3 text-sm text-white/80 leading-relaxed font-satoshi">
-            <Check className="w-5 h-5 text-gold shrink-0 mt-0.5" />
+          <li key={i} className="flex items-start gap-3 text-sm text-slate-600 leading-relaxed font-satoshi">
+            <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
             <span>{feature}</span>
           </li>
         ))}

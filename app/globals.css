@@ -2,9 +2,9 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background:  #0A0A0A;
-  --color-foreground: #F2F0EB;
-  --color-gold: #C8A96E;
+  --color-background:  #FAFCFF; /* Snow White / Icy Blue tint */
+  --color-foreground: #2A5C3F ; /* Dark Slate */
+  --color-primary:#D52B1E   ; /* Frost Blue */
   
   --font-satoshi: 'Satoshi', sans-serif;
   --font-serif-italic: var(--font-dm-serif-text), serif;

@@ -1,57 +1,78 @@
 "use client";
 
-import { useRef } from "react";
-import CountUp from "./CountUp";
+import { useEffect, useState, useRef } from "react";
+import { useInView } from "framer-motion";
 
 interface AnimatedStatCardProps {
   endValue: number;
-  suffix: string;
+  suffix?: string;
   label: string;
   subLabel?: string;
+  duration?: number;
   theme?: "light" | "dark";
-  className?: string; // For layout ordering
+  className?: string;
 }
 
-export function AnimatedStatCard({ endValue, suffix, label, subLabel, theme = "dark", className = "" }: AnimatedStatCardProps) {
+export function AnimatedStatCard({ 
+  endValue, 
+  suffix = "", 
+  label, 
+  subLabel,
+  duration = 2000,
+  theme = "dark",
+  className = ""
+}: AnimatedStatCardProps) {
+  const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isLight = theme === "light";
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  useEffect(() => {
+    if (!isInView) return;
+
+    let startTime: number | null = null;
+    let animationFrame: number;
+
+    const animate = (currentTime: number) => {
+      if (!startTime) startTime = currentTime;
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      
+      // Easing function (easeOutQuart)
+      const easeProgress = 1 - Math.pow(1 - progress, 4);
+      
+      setCount(Math.floor(easeProgress * endValue));
+
+      if (progress < 1) {
+        animationFrame = requestAnimationFrame(animate);
+      }
+    };
+
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => cancelAnimationFrame(animationFrame);
+  }, [isInView, endValue, duration]);
+
+  const isLight = theme === "light";
+  
   return (
     <div 
       ref={ref}
-      className={`relative p-8 md:p-10 flex flex-col items-start text-left justify-between h-48 md:h-48 group ${isLight ? "bg-white" : "bg-black"} ${className}`}
+      className={`relative p-8 flex flex-col items-center justify-center overflow-hidden transition-all duration-300 ${
+        isLight 
+          ? "bg-[#0F172A] border border-transparent shadow-lg" 
+          : "bg-white border border-slate-200 shadow-sm"
+      } ${className}`}
     >
-      {/* Top Row: Label & Icon */}
-      <div className="flex justify-between items-center w-full mb-6">
-        <span className={`text-sm md:text-base font-black uppercase tracking-widest font-serif-italic ${isLight ? "text-black" : "text-white"}`}>
-          {label}
-        </span>
-        <div className={`w-6 h-6 ${isLight ? "text-black" : "text-white"}`}>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-full h-full">
-            {isLight ? (
-              // Trending Up Arrow
-              <path d="M7 17l9.2-9.2M17 17V7H7" />
-            ) : (
-              // Eye Icon
-              <><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" /><circle cx="12" cy="12" r="3" /></>
-            )}
-          </svg>
+      <div className={`text-4xl md:text-5xl font-bold font-satoshi mb-2 mt-4 tracking-tight ${isLight ? "text-white" : "text-slate-900"}`}>
+        {count}{suffix}
+      </div>
+      <div className={`text-sm uppercase tracking-widest font-bold mb-2 text-center ${isLight ? "text-primary" : "text-primary"}`}>
+        {label}
+      </div>
+      {subLabel && (
+        <div className={`text-sm text-center font-medium ${isLight ? "text-slate-400" : "text-slate-500"}`}>
+          {subLabel}
         </div>
-      </div>
-
-      {/* Middle: Huge Number */}
-      <div className="flex items-baseline my-auto">
-        <CountUp 
-          to={endValue} 
-          duration={3} 
-          className={`text-8xl md:text-7xl font-black font-satoshi tabular-nums tracking-tighter leading-none font-serif-italic ${isLight ? "text-black" : "text-red-700"}`} 
-        />
-        <span className={`text-6xl md:text-7xl font-black font-satoshi ml-1 tracking-tighter leading-none font-serif-italic ${isLight ? "text-black" : "text-white"}`}>
-          {suffix}
-        </span>
-      </div>
-
-     
+      )}
     </div>
   );
 }

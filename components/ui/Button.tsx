@@ -15,9 +15,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-gold text-black hover:bg-white hover:text-black",
+          "bg-primary text-white hover:bg-primary/90 hover:scale-[1.03] hover:shadow-lg active:scale-95 transition-all duration-300",
         outline:
-          "border border-white bg-transparent text-white hover:bg-white hover:text-black",
+          "border border-slate-300 bg-transparent text-slate-800 hover:bg-white hover:text-primary hover:border-primary hover:scale-[1.03] hover:shadow-md active:scale-95 transition-all duration-300",
       },
     },
     defaultVariants: {
