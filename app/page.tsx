@@ -166,16 +166,17 @@ export default function Home() {
               transition={{ repeat: Infinity, ease: "linear", duration: 60 }}
             >
               {[
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/hotel.mp4?updatedAt=1774343936604",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/bodycare.mp4?updatedAt=1774343936086",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/red.mp4?updatedAt=1774343934540",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/promotion.mp4?updatedAt=1774343936073",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/explainer.mp4?updatedAt=1774343935978",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/hotel.mp4?updatedAt=1774343936604",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/bodycare.mp4?updatedAt=1774343936086",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/red.mp4?updatedAt=1774343934540",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/promotion.mp4?updatedAt=1774343936073",
-                "https://ik.imagekit.io/6b0su29zd/Aus.Magazine/explainer.mp4?updatedAt=1774343935978"
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775036788984.publer.com.mp4",
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775037226982.publer.com.mp4",
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775036617996.publer.com.mp4",
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775037385799.publer.com.mp4",
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775037085770.publer.com.mp4",
+                // Duplicated set for seamless loop
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775036788984.publer.com.mp4",
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775037226982.publer.com.mp4",
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775036617996.publer.com.mp4",
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775037385799.publer.com.mp4",
+                "https://ik.imagekit.io/u6knbvq74h/client%20rlt%20wb/1775037085770.publer.com.mp4",
               ].map((src, i) => (
                 <div key={i} className="relative w-[280px] md:w-[320px] aspect-[9/16] shrink-0 bg-slate-100 shadow-md overflow-hidden rounded-xl border border-slate-200">
                   <video src={src} autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover" />
