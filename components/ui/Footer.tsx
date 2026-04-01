@@ -20,7 +20,6 @@ export function Footer() {
             <Link href="/" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Home</Link>
             <Link href="/about" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">About</Link>
             <Link href="/get-featured" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Get Featured</Link>
-            <Link href="/advertise" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Advertise</Link>
             <Link href="/contact" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Contact</Link>
           </div>
 
@@ -29,8 +28,6 @@ export function Footer() {
             <Link href="/get-featured" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Story Feature</Link>
             <Link href="/get-featured" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Feed Post</Link>
             <Link href="/get-featured" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Featured Campaign</Link>
-            <Link href="/advertise" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Sponsored Content</Link>
-            <Link href="/advertise" className="text-slate-600 hover:text-primary transition-colors text-sm font-medium">Brand Ambassador</Link>
           </div>
 
           <div className="flex flex-col gap-4">

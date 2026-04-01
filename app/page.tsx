@@ -49,13 +49,7 @@ export default function Home() {
 
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-2 mt-4 opacity-80">
-            {['Food', 'Photography', 'Beauty', 'Tips', 'Marketing', 'Small Business'].map(tag => (
-              <span key={tag} className="text-xs uppercase tracking-widest border border-slate-300 text-slate-500 rounded-full px-3 py-1 bg-white font-bold">
-                {tag}
-              </span>
-            ))}
-          </div>
+     
         </Reveal>
       </section>
 
@@ -145,7 +139,7 @@ export default function Home() {
       <section className="py-32 overflow-hidden relative">
         <Reveal>
           <div className="text-center mb-16 px-6">
-            <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4 inline-block">Viral Content</span>
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-">Viral Content</span>
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900">The Engagement Engine</h2>
           </div>
 
@@ -183,7 +177,7 @@ export default function Home() {
       <section className="py-32 px-6 bg-[#F0F4F8] border-y border-slate-200">
         <Reveal>
           <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
-            <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4">Get Featured</span>
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-8">Get Featured</span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Get Your Brand <span className="font-serif-italic font-regular text-primary">Seen</span> by Hundreds of Thousands</h2>
             <p className="text-slate-600 max-w-2xl mb-16 text-lg font-medium">
               Promote your business, product, or service to a highly engaged Swiss audience. Choose your level of exposure.
@@ -230,57 +224,56 @@ export default function Home() {
       {/* SECTION 7 — WHY CHOOSE US */}
       <section className="py-32 px-6 max-w-7xl mx-auto">
         <Reveal>
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-20">
-            <div className="flex flex-col">
-              <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4">Differentiation</span>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Why Brands Choose Switzerland Familye</h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-10 font-medium">
-                We are not a generic promotion page. We are a Switzerland-first media platform built entirely around connecting local brands with Swiss audiences who genuinely buy.
-              </p>
-              <Link href="/get-featured" className="text-slate-900 hover:text-primary transition-colors font-bold uppercase tracking-widest text-sm flex items-center gap-2 w-max group">
-                Start Growing Today
-                <span className="w-6 h-px bg-slate-900 group-hover:bg-primary transition-colors"></span>
-              </Link>
-            </div>
+          <div className="flex flex-col items-center text-center mb-16">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-6">Why Choose Us</span>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 max-w-3xl mx-auto leading-tight">Why Brands Choose Switzerland Familye</h2>
+          </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
-              {[
-                { title: "Switzerland-Focused Audience", desc: "Our entire community is Swiss-based. Your promotion reaches real local customers, not international followers who will never visit your shop." },
-                { title: "Six Niches, One Platform", desc: "Food. Photography. Beauty. Tips. Marketing. Small Business. Your brand finds the exact audience that cares most about what you offer." },
-                { title: "Fast 48-Hour Turnaround", desc: "Submit today, go live tomorrow. We move fast because your time is money and opportunity does not wait." },
-                { title: "Nearly a Million Real Eyes", desc: "954K followers built over 5,000 posts. This is not overnight growth — it is a genuinely engaged community built on trust over years." }
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col">
-                  <h4 className="text-lg font-bold mb-3 text-slate-900">{item.title}</h4>
-                  <p className="text-slate-600 leading-relaxed text-sm font-medium">{item.desc}</p>
-                </div>
-              ))}
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: "Switzerland-Focused Audience", desc: "Our entire community is Swiss-based. Your promotion reaches real local customers, not international followers who will never visit your shop." },
+              { title: "Six Niches, One Platform", desc: "Food. Photography. Beauty. Tips. Marketing. Small Business. Your brand finds the exact audience that cares most about what you offer." },
+              { title: "Fast 48-Hour Turnaround", desc: "Submit today, go live tomorrow. We move fast because your time is money and opportunity does not wait." },
+              { title: "Nearly a Million Real Eyes", desc: "954K followers built over 5,000 posts. This is not overnight growth — it is a genuinely engaged community built on trust over years." }
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center text-center p-6 bg-[#FAFCFF] border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow">
+                <h4 className="text-xl font-bold mb-3 text-slate-900">{item.title}</h4>
+                <p className="text-slate-600 leading-relaxed text-sm font-medium">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </Reveal>
       </section>
 
       {/* SECTION 8 — TESTIMONIALS */}
-      <section className="py-32 px-6 bg-white border-y border-slate-200">
+      <section className="py-32 bg-white border-y border-slate-200 overflow-hidden">
         <Reveal>
-          <div className="max-w-7xl mx-auto flex flex-col items-center">
-            <span className="text-primary text-xs font-bold uppercase tracking-widest mb-4">Results</span>
-            <h2 className="text-4xl md:text-5xl font-bold mb-20 text-center text-slate-900">Real <span className="font-serif-italic font-regular text-primary">Growth</span> for Real Swiss Brands</h2>
+          <div className="max-w-7xl mx-auto flex flex-col items-center px-6 mb-20">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs font-bold tracking-widest uppercase mb-8 ">Results</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-900">Real <span className="font-serif-italic font-regular text-primary">Growth</span> for Real Swiss Brands</h2>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+          <div className="relative w-full flex overflow-hidden py-4">
+            <div className="absolute left-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div className="absolute right-0 top-0 bottom-0 w-20 md:w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+
+            <div className="flex w-max gap-8 animate-marquee hover:[animation-play-state:paused] px-4 items-stretch group cursor-pointer">
               {[
+                { quote: "We gained 400 plus followers in the first 48 hours. Our DMs were full of enquiries. Best CHF 50 we have ever spent on marketing.", name: "Lena M.", biz: "Nail Studio, Zurich" },
+                { quote: "Our bookings doubled the week after the feature. We have been using Switzerland Familye every month since. The ROI is incredible.", name: "Marco T.", biz: "Alpine Tour Guide, Interlaken" },
+                { quote: "Finally a promotion platform built for Swiss businesses. Our restaurant reached thousands of new people overnight. We were fully booked by the weekend.", name: "Priya R.", biz: "Restaurant Owner, Geneva" },
                 { quote: "We gained 400 plus followers in the first 48 hours. Our DMs were full of enquiries. Best CHF 50 we have ever spent on marketing.", name: "Lena M.", biz: "Nail Studio, Zurich" },
                 { quote: "Our bookings doubled the week after the feature. We have been using Switzerland Familye every month since. The ROI is incredible.", name: "Marco T.", biz: "Alpine Tour Guide, Interlaken" },
                 { quote: "Finally a promotion platform built for Swiss businesses. Our restaurant reached thousands of new people overnight. We were fully booked by the weekend.", name: "Priya R.", biz: "Restaurant Owner, Geneva" }
               ].map((test, i) => (
-                <div key={i} className="p-8 bg-[#FAFCFF] border border-slate-200 rounded-lg flex flex-col shadow-sm">
+                <div key={i} className="w-[320px] md:w-[400px] shrink-0 p-8 bg-[#FAFCFF] border border-slate-200 rounded-xl flex flex-col shadow-sm transition-transform">
                   <div className="flex gap-1 mb-6">
                     {[1, 2, 3, 4, 5].map((s) => (
                       <span key={s} className="text-[#F59E0B] text-lg">★</span>
                     ))}
                   </div>
-                  <p className="text-slate-700 leading-relaxed mb-8 flex-grow font-medium">"{test.quote}"</p>
-                  <div className="flex flex-col">
+                  <p className="text-slate-700 leading-relaxed mb-8 flex-grow font-medium text-[15px] md:text-base">"{test.quote}"</p>
+                  <div className="flex flex-col mt-auto">
                     <span className="font-bold text-slate-900">{test.name}</span>
                     <span className="text-slate-500 text-sm font-medium">{test.biz}</span>
                   </div>
