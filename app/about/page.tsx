@@ -1,6 +1,6 @@
 "use client";
 
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, RevealItem } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import Link from "next/link";
 
@@ -10,13 +10,19 @@ export default function About() {
       {/* SECTION 1 — PAGE HEADER */}
       <section className="pt-40 pb-24 px-6 max-w-4xl mx-auto text-center">
         <Reveal>
-          <span className="text-primary bg-primary/10 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">About Us</span>
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-            Switzerland's Home for Food, Life and Local Brands
-          </h1>
-          <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
-            Switzerland Familye is a fast-growing Swiss media platform dedicated to showcasing the best of Switzerland — its businesses, creators, food, beauty, and the people who make this country extraordinary.
-          </p>
+          <RevealItem>
+            <span className="text-primary bg-primary/10 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6 inline-block">About Us</span>
+          </RevealItem>
+          <RevealItem>
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
+              Switzerland's Home for Food, Life and Local Brands
+            </h1>
+          </RevealItem>
+          <RevealItem>
+            <p className="text-lg md:text-xl text-slate-600 leading-relaxed font-medium max-w-2xl mx-auto">
+              Switzerland Familye is a fast-growing Swiss media platform dedicated to showcasing the best of Switzerland — its businesses, creators, food, beauty, and the people who make this country extraordinary.
+            </p>
+          </RevealItem>
         </Reveal>
       </section>
 
@@ -27,7 +33,9 @@ export default function About() {
             
             {/* LEFT COLUMN — STATS */}
             <div className="flex flex-col">
-              <h2 className="text-3xl font-serif-italic font-bold mb-12 text-slate-900">Platform by the Numbers</h2>
+              <RevealItem>
+                <h2 className="text-3xl font-serif-italic font-bold mb-12 text-slate-900">Platform by the Numbers</h2>
+              </RevealItem>
               
               <div className="flex flex-col border-y border-slate-200">
                 {[
@@ -36,20 +44,22 @@ export default function About() {
                   { label: "Content Niches", val: "6" },
                   { label: "Brands Featured", val: "500+" }
                 ].map((stat, i) => (
-                  <div key={i} className="py-8 flex justify-between items-center bg-white hover:bg-slate-50 transition-colors px-6 border-b border-slate-100 last:border-none">
+                  <RevealItem key={i} className="py-8 flex justify-between items-center bg-white hover:bg-slate-50 transition-colors px-6 border-b border-slate-100 last:border-none">
                     <span className="text-slate-600 font-medium text-lg">{stat.label}</span>
                     <span className="text-3xl font-bold font-satoshi text-primary">{stat.val}</span>
-                  </div>
+                  </RevealItem>
                 ))}
               </div>
             </div>
 
             {/* RIGHT COLUMN — PHILOSOPHY */}
             <div className="flex flex-col">
-              <h2 className="text-3xl font-serif-italic font-bold mb-12 text-slate-900">What We Stand For</h2>
+              <RevealItem>
+                <h2 className="text-3xl font-serif-italic font-bold mb-12 text-slate-900">What We Stand For</h2>
+              </RevealItem>
               
               <div className="flex flex-col gap-12">
-                <div>
+                <RevealItem>
                   <h3 className="text-xl font-bold mb-3 flex items-center gap-3 text-slate-900">
                     <span className="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(59,130,246,0.6)]"></span>
                     Switzerland First
@@ -57,9 +67,9 @@ export default function About() {
                   <p className="text-slate-600 leading-relaxed font-medium">
                     Every piece of content, every brand we promote, every story we tell is rooted in Switzerland. Our community is local, loyal, and deeply engaged with everything Swiss.
                   </p>
-                </div>
+                </RevealItem>
                 
-                <div>
+                <RevealItem>
                   <h3 className="text-xl font-bold mb-3 flex items-center gap-3 text-slate-900">
                     <span className="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(59,130,246,0.6)]"></span>
                     Real Results Only
@@ -67,9 +77,9 @@ export default function About() {
                   <p className="text-slate-600 leading-relaxed font-medium">
                     We do not believe in fake impressions or inflated numbers. We build real audiences — people who genuinely engage with and buy from the brands we feature.
                   </p>
-                </div>
+                </RevealItem>
 
-                <div>
+                <RevealItem>
                   <h3 className="text-xl font-bold mb-3 flex items-center gap-3 text-slate-900">
                     <span className="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(59,130,246,0.6)]"></span>
                     Speed and Simplicity
@@ -77,9 +87,9 @@ export default function About() {
                   <p className="text-slate-600 leading-relaxed font-medium">
                     Submit today, go live within 48 hours. We keep our process simple because your time and your business momentum matter more than bureaucracy.
                   </p>
-                </div>
+                </RevealItem>
 
-                <div>
+                <RevealItem>
                   <h3 className="text-xl font-bold mb-3 flex items-center gap-3 text-slate-900">
                     <span className="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_10px_rgba(59,130,246,0.6)]"></span>
                     Community Over Follower Counts
@@ -87,7 +97,7 @@ export default function About() {
                   <p className="text-slate-600 leading-relaxed font-medium">
                     Our audience trusts us because we have spent years building real relationships — not just chasing numbers. That trust is what makes your promotion actually work.
                   </p>
-                </div>
+                </RevealItem>
               </div>
             </div>
 
@@ -98,18 +108,22 @@ export default function About() {
       {/* SECTION 3 — CLOSING CTA */}
       <section className="py-32 px-6 bg-white text-center border-t border-slate-200 mt-auto shadow-sm">
         <Reveal>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Want to Be Part of the <span className="font-serif-italic font-regular text-primary">Story</span>?</h2>
-          <p className="text-slate-600 font-medium text-lg max-w-xl mx-auto mb-12">
-            Join hundreds of Swiss brands already growing with Switzerland Familye.
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <RevealItem>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Want to Be Part of the <span className="font-serif-italic font-regular text-primary">Story</span>?</h2>
+          </RevealItem>
+          <RevealItem>
+            <p className="text-slate-600 font-medium text-lg max-w-xl mx-auto mb-12">
+              Join hundreds of Swiss brands already growing with Switzerland Familye.
+            </p>
+          </RevealItem>
+          <RevealItem className="flex flex-col sm:flex-row justify-center gap-4">
             <Link href="/get-featured">
               <Button className="h-12 px-8 text-base">Get Featured</Button>
             </Link>
             <Link href="/contact">
               <Button variant="outline" className="h-12 px-8 text-base bg-transparent border-slate-300">Talk to Us</Button>
             </Link>
-          </div>
+          </RevealItem>
         </Reveal>
       </section>
     </div>
