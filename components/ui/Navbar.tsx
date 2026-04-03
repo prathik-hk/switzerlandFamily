@@ -26,6 +26,7 @@ export function Navbar() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
+    { label: "Get Featured", href: "/get-featured" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -40,7 +41,7 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="flex items-center shrink-0">
-          <img src="/logo.png" alt="Switzerland Familye" className="h-10 w-auto object-contain" />
+          <img src="/LOGO.png" alt="Switzerland Familye" className="h-10 w-auto object-contain" />
         </Link>
 
         {/* Desktop Links */}

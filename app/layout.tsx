@@ -14,6 +14,9 @@ const dmSerifText = DM_Serif_Text({
 export const metadata: Metadata = {
   title: "Switzerland Familye - Switzerland's Viral Promotion Platform",
   description: "Helping Swiss brands, creators, and small businesses get seen by nearly a million real, engaged followers — every single day.",
+  icons: {
+    icon: '/LOGO.png',
+  },
 };
 
 export default function RootLayout({
